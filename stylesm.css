@@ -1,29 +1,40 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow on the body */
 }
 
-.instagram-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 800px;
+.instagram-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.instagram-scroll {
+    display: flex; /* Use flexbox for horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100vh; /* Full viewport height */
+    align-items: center; /* Center items vertically */
+    background-color: #fff;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 .post {
     position: relative;
+    flex: 0 0 auto; /* Prevent posts from shrinking */
+    width: 300px; /* Fixed width for posts */
+    height: 200px; /* Adjust height as needed */
+    margin-right: 15px; /* Space between posts */
     overflow: hidden;
 }
 
 .post img, .post video {
     width: 100%;
-    display: block;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Ensure media covers the container */
 }
 
 .post-overlay {
@@ -43,10 +54,35 @@ body {
     transform: translateY(0);
 }
 
+/* Scroll buttons */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .instagram-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .post {
+        width: 100%; /* Make posts full-width on smaller screens */
+        height: auto; /* Adjust height based on content */
+    }
+
+    .instagram-scroll {
+        padding: 5px; /* Adjust padding for smaller screens */
     }
 }
