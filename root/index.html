@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styleindex.css">
 </head>
 <body>
-
 <header>
     <div class="container">
         <div class="logo">
@@ -21,7 +20,6 @@
                 <li><a href="SEO.html">SEO</a></li>
                 <li><a href="SocialMedia.html">Social Media</a></li>
                 <li><a href="Analytics.html">Analytics</a></li>
-
             </ul>
         </nav>
         <div class="nav-toggle">
@@ -33,12 +31,12 @@
 </header>
 
 <script>
-    // Mobile Navigation Toggle
     document.querySelector('.nav-toggle').addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('nav-active');
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('nav-active');
         document.querySelector('.nav-toggle').classList.toggle('toggle');
+        console.log('Menu toggled');
     });
 </script>
-
 </body>
 </html>

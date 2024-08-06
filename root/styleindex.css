@@ -60,7 +60,7 @@ body, h1, h2, h3, p, ul {
     }
 
     .nav-links {
-        display: flex;
+        display: none;
         flex-direction: column;
         background-color: #fff;
         position: absolute;
@@ -69,11 +69,13 @@ body, h1, h2, h3, p, ul {
         width: 200px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transform: translateX(100%);
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, display 0s linear 0.3s;
     }
 
     .nav-links.nav-active {
+        display: flex;
         transform: translateX(0);
+        transition: transform 0.3s ease, display 0s linear;
     }
 
     .nav-toggle {
