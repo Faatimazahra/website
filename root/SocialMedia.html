@@ -8,42 +8,58 @@
 </head>
 <body>
 
-<div class="instagram-grid">
-    <!-- Photo Post 1 -->
-    <div class="post">
-        <img src="post1.jpg" alt="Instagram Photo Post 1">
-        <div class="post-overlay">
-            <p>Caption for Photo Post 1</p>
+<div class="instagram-container">
+    <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+    <div class="instagram-scroll">
+        <!-- Photo Post 1 -->
+        <div class="post">
+            <img src="post1.jpg" alt="Instagram Photo Post 1">
+            <div class="post-overlay">
+                <p>Caption for Photo Post 1</p>
+            </div>
+        </div>
+        <!-- Video Post 1 -->
+        <div class="post">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="post-overlay">
+                <p>Caption for Video Post 1</p>
+            </div>
+        </div>
+        <!-- Photo Post 2 -->
+        <div class="post">
+            <img src="post2.jpg" alt="Instagram Photo Post 2">
+            <div class="post-overlay">
+                <p>Caption for Photo Post 2</p>
+            </div>
+        </div>
+        <!-- Video Post 2 -->
+        <div class="post">
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="post-overlay">
+                <p>Caption for Video Post 2</p>
+            </div>
         </div>
     </div>
-    <!-- Video Post 1 -->
-    <div class="post">
-        <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="post-overlay">
-            <p>Caption for Video Post 1</p>
-        </div>
-    </div>
-    <!-- Photo Post 2 -->
-    <div class="post">
-        <img src="post2.jpg" alt="Instagram Photo Post 2">
-        <div class="post-overlay">
-            <p>Caption for Photo Post 2</p>
-        </div>
-    </div>
-    <!-- Video Post 2 -->
-    <div class="post">
-        <video controls>
-            <source src="video2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="post-overlay">
-            <p>Caption for Video Post 2</p>
-        </div>
-    </div>
+    <button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
 </div>
+
+<script>
+    function scrollLeft() {
+        const container = document.querySelector('.instagram-scroll');
+        container.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+        const container = document.querySelector('.instagram-scroll');
+        container.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>
