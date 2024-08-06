@@ -1,0 +1,13 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "My static website",
+  "homepage": "https://faatimazahra.github.io/website/",
+  "scripts": {
+    "predeploy": "echo 'No build step needed'",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
