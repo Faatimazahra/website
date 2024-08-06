@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Your Company Logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="SEO.html">SEO</a></li>
+                <li><a href="SocialMedia.html">Social Media</a></li>
+                <li><a href="Analytics.html">Analytics</a></li>
+
+            </ul>
+        </nav>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Mobile Navigation Toggle
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('nav-active');
+        document.querySelector('.nav-toggle').classList.toggle('toggle');
+    });
+</script>
+
+</body>
+</html>
